@@ -1,0 +1,193 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  transition: all 0.3s;
+  background: transparent;
+}
+.navbar-scrolled {
+  background: white !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.navbar-brand-custom {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero-section {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600') no-repeat center center/cover;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.search-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    background: transparent;
+
+}
+.search-card .nav-link {
+  border: none;
+  font-weight: 600;
+  color: #fdf7f7;
+}
+.search-card .nav-link.active {
+  color: #ED1569;
+  border-bottom: 3px solid #ED1569;
+}
+.btn-primary-custom {
+  background: #ED1569;
+  border: none;
+}
+
+.feature-box {
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: transform 0.3s;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 24px;
+}
+.carousel-item {
+  flex: 0 0 calc(100% / 3 - 16px);
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(183, 173, 173);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+.carousel-btn.prev {
+  left: 20px;
+}
+.carousel-btn.next {
+  right: 20px;
+}
+.destination-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.destination-card img {
+  height: 250px;
+  object-fit: cover;
+}
+.destination-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ED1569;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.experience-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.experience-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.experience-card:hover img {
+  transform: scale(1.1);
+}
+.experience-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  transition: all 0.3s;
+}
+
+/* ===== Stats Section ===== */
+.stats-number {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+/* ===== Footer ===== */
+/* footer {
+  color: white;
+}
+footer a {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: white;
+} */
