@@ -1,11 +1,10 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== LetzGo Sans Light Font ===== */
+/*LetzGo Sans Light Font */
 @font-face {
   font-family: 'LetzGo Sans Light';
   src: url('/fonts/LetzGoSans-Light.woff2') format('woff2'),
@@ -15,7 +14,8 @@
   font-display: swap;
 }
 
-/* Apply globally */
+/* full apply cheyyaan */
+
 body {
   font-family: 'LetzGo Sans Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -31,12 +31,12 @@ body {
   min-height: 100vh;
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* ndaakyath */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -54,13 +54,11 @@ html {
   background: #c91158;
 }
 
-/* Remove default link styles */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Button focus styles */
 button:focus,
 input:focus,
 textarea:focus,

@@ -22,6 +22,51 @@ a {
   font-weight: 700;
 }
 
+/* Logo Styles */
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s;
+  object-fit: contain;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.footer-logo {
+  height: 45px;
+  width: auto;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+  }
+  
+  .footer-logo {
+    height: 35px;
+  }
+}
+
+/* White background for navbar collapse on mobile/tablet */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .navbar {
+    background: white !important;
+  }
+}
+
 .hero-section {
   background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600') no-repeat center center/cover;
   min-height: 100vh;
@@ -133,7 +178,9 @@ a {
 }
 .destination-card img {
   height: 250px;
+  width: 100%;
   object-fit: cover;
+  display: block;
 }
 .destination-tag {
   position: absolute;
@@ -179,15 +226,3 @@ a {
   font-size: 36px;
   font-weight: 700;
 }
-
-/* ===== Footer ===== */
-/* footer {
-  color: white;
-}
-footer a {
-  color: rgba(255,255,255,0.7);
-  transition: color 0.3s;
-}
-footer a:hover {
-  color: white;
-} */

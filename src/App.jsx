@@ -2,10 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Search, Calendar, Users, MapPin, Plane, Hotel, Car, Star, Award, Shield, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import './App.css';
 
+// Use images from public folder
+const logo = '/assets/logo.png';
+const dubaiImg = '/assets/Dubai.avif';
+const baliImg = '/assets/Bali.webp';
+const kashmirImg = '/assets/Kashmir.webp';
+const keralaImg = '/assets/Kerala.jpeg';
+const maldivesImg = '/assets/Maldieves.jpg';
+const lakshadweepImg = '/assets/Lakshadweep.webp';
+
 function App() {
   const [activeTab, setActiveTab] = useState('flights');
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Close navbar on mobile when clicking links
+  const closeNavbar = () => {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      bsCollapse.hide();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,50 +41,50 @@ function App() {
       setCurrentSlide((prev) => (prev + 1) % destinations.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, );
+  }, []);
 
   const destinations = [
     { 
       name: 'Dubai', 
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80', 
+      image: dubaiImg, 
       price: 'From $599', 
       tag: 'Trending',
       description: 'Experience luxury and modernity'
     },
     { 
-      name: 'Paris', 
-      image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80', 
-      price: 'From $799', 
-      tag: 'Popular',
-      description: 'The city of love and lights'
-    },
-    { 
-      name: 'Maldives', 
-      image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80', 
-      price: 'From $1,299', 
-      tag: 'Luxury',
-      description: 'Paradise on earth awaits'
-    },
-    { 
-      name: 'Tokyo', 
-      image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80', 
-      price: 'From $899', 
-      tag: 'Adventure',
-      description: 'Where tradition meets future'
-    },
-    { 
       name: 'Bali', 
-      image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80', 
+      image: baliImg, 
       price: 'From $499', 
       tag: 'Beach',
       description: 'Island paradise getaway'
     },
     { 
-      name: 'New York', 
-      image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80', 
+      name: 'Kashmir', 
+      image: kashmirImg, 
+      price: 'From $399', 
+      tag: 'Adventure',
+      description: 'Paradise on earth'
+    },
+    { 
+      name: 'Kerala', 
+      image: keralaImg, 
+      price: 'From $449', 
+      tag: 'Nature',
+      description: 'God\'s own country'
+    },
+    { 
+      name: 'Maldives', 
+      image: maldivesImg, 
+      price: 'From $1,299', 
+      tag: 'Luxury',
+      description: 'Tropical paradise awaits'
+    },
+    { 
+      name: 'Lakshadweep', 
+      image: lakshadweepImg, 
       price: 'From $699', 
-      tag: 'City Break',
-      description: 'The city that never sleeps'
+      tag: 'Island',
+      description: 'Hidden gem of India'
     }
   ];
 
@@ -213,8 +233,8 @@ function App() {
       {/* Navbar */}
       <nav className={`navbar navbar-expand-lg navbar-light fixed-top py-3 ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container">
-          <a className="navbar-brand navbar-brand-custom d-flex align-items-center" href="#home">
-            Letz<span style={{ color: '#ED1569' }}>BOOQ</span>
+          <a className="navbar-brand d-flex align-items-center" href="#home">
+            <img src={logo} alt="LetzBOOQ Logo" className="navbar-logo" />
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
@@ -222,22 +242,22 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-center">
               <li className="nav-item">
-                <a className="nav-link fw-semibold text-dark" href="#home">Home</a>
+                <a className="nav-link fw-semibold text-dark" href="#home" onClick={closeNavbar}>Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-semibold text-dark" href="#about">About</a>
+                <a className="nav-link fw-semibold text-dark" href="#about" onClick={closeNavbar}>About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-semibold text-dark" href="#booking">Booking</a>
+                <a className="nav-link fw-semibold text-dark" href="#booking" onClick={closeNavbar}>Booking</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-semibold text-dark" href="#explore">Explore</a>
+                <a className="nav-link fw-semibold text-dark" href="#explore" onClick={closeNavbar}>Explore</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-semibold text-dark" href="#contact">Contact</a>
+                <a className="nav-link fw-semibold text-dark" href="#contact" onClick={closeNavbar}>Contact</a>
               </li>
               <li className="nav-item ms-3">
-                <button className="btn btn-outline-danger rounded-pill px-4 fw-semibold" style={{ borderColor: '#ED1569', color: '#7f3d57ff' }}>Sign In</button>
+                <button className="btn btn-outline-danger rounded-pill px-4 fw-semibold" style={{ borderColor: '#ED1569', color: '#7f3d57ff' }} onClick={closeNavbar}>Sign In</button>
               </li>
             </ul>
           </div>
@@ -249,7 +269,7 @@ function App() {
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <div className="row">
             <div className="col-lg-10 mx-auto text-center text-white mb-5">
-              <h1 className="hero-title display-3 fw-bold mb-4 mt-5">
+              <h1 className="hero-title display-3 fw-bold mb-4 " style={{marginTop:90}}>
   Your Journey Begins Here
 </h1>
 
@@ -293,7 +313,7 @@ function App() {
                 <div className="text-center mt-4">
   <button
     className="btn btn-primary-custom text-light fw-semibold px-4 py-2 rounded-pill"
-    style={{ background: '#ED1569', color: 'white', transition: 'background 0.2.s' }}
+    style={{ background: '#ED1569', color: 'white', transition: 'background 0.2s' }}
     onMouseEnter={(e) => e.currentTarget.style.background = '#7f3d57ff'}
     onMouseLeave={(e) => e.currentTarget.style.background = '#ED1569'}
   >
@@ -441,7 +461,9 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col-lg-4 mb-4 mb-lg-0">
-              <h3 className="navbar-brand-custom mb-3">Letz<span style={{ color: '#ED1569' }}>BOOQ</span></h3>
+              <div className="d-flex align-items-center mb-3">
+                <img src={logo} alt="LetzBOOQ Logo" className="footer-logo" />
+              </div>
               <p className="text-white-50">Your trusted travel partner for unforgettable journeys around the world.</p>
               <p className="text-white-50 mb-1"><strong>Email:</strong> info@letzbooq.com</p>
               <p className="text-white-50 mb-1"><strong>Phone:</strong> +12346789</p>
