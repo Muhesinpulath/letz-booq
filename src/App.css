@@ -405,7 +405,7 @@ display: flex;
 
 @media (max-width: 770px) {
   .top-nav {
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   
   .main-nav {
@@ -490,7 +490,7 @@ display: flex;
 
 @media (max-width: 580px) {
   .top-nav {
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
   }
   
   .main-nav {
@@ -527,7 +527,7 @@ display: flex;
   }
   
   .hero-section {
-    padding: 4rem 1rem 5rem;
+    padding: 4rem rem 5rem;
     min-height: 400px;
   }
   
