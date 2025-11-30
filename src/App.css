@@ -405,7 +405,7 @@ display: flex;
 
 @media (max-width: 770px) {
   .top-nav {
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
   
   .main-nav {
@@ -490,7 +490,7 @@ display: flex;
 
 @media (max-width: 580px) {
   .top-nav {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1rem;
   }
   
   .main-nav {
